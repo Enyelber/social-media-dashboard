@@ -1,0 +1,287 @@
+/* Global Variables */
+/* Global Variables End */
+/* Globals */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #1d2029;
+  background: white;
+}
+
+.wrapper {
+  padding: 0 30px;
+}
+
+.grid {
+  display: grid;
+  grid-row-gap: 25px;
+}
+
+.dark-mode {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked ~ .switch:before {
+  transform: translateX(0);
+}
+
+.switch {
+  height: 40px;
+  display: block;
+  border-radius: 20px;
+  background: #5f616d;
+  width: 80px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  transform: translateX(40px);
+  transition: 0.3s;
+  will-change: transform;
+}
+
+/* Globals End */
+/* Header Begin */
+.header {
+  background: #f8f9fe;
+  padding-bottom: 100px;
+  border-radius: 0 0 20px 20px;
+  padding-top: 2em;
+}
+
+.header-total {
+  color: #5f616d;
+  margin: 0.5em 0;
+  font-weight: 600;
+  border-bottom: 1px solid #5f616d;
+  padding-bottom: 1.5em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.7em;
+}
+
+/* Header End*/
+/* Cards */
+.top-cards {
+  margin-top: -50px;
+  margin-bottom: 3em;
+}
+
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f3fa;
+  text-align: center;
+  padding: 1.7em 0;
+  position: relative;
+}
+
+.card:before {
+  content: "";
+  height: 4px;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.card.facebook::before {
+  background: #198ff5;
+}
+
+.card.twitter::before {
+  background: #1ca0f2;
+}
+
+.card.instagram::before {
+  background: linear-gradient(to right, #fdc468, #df4996);
+}
+
+.card.youtube::before {
+  background: #c4032a;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6f717e;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.card-title img {
+  margin-right: 5px;
+}
+
+.card-followers__number {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.card-followers__title {
+  display: block;
+  text-transform: uppercase;
+  color: #6f717e;
+  letter-spacing: 5px;
+  font-size: 0.75em;
+}
+
+.card-today {
+  margin-top: 20px;
+  color: #1db489;
+  font-size: 0.7em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-today img {
+  margin-right: 5px;
+}
+
+/* Cards End */
+/* Overview */
+.overview {
+  padding-bottom: 2em;
+}
+
+h2 {
+  color: #5f616d;
+}
+
+.card-small {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 1em;
+  background: #f0f3fa;
+  border-radius: 8px;
+  padding: 1.7em;
+}
+
+.card-small p {
+  margin: 0;
+}
+
+.card-small-views {
+  color: #6f717e;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.card-small-icon {
+  text-align: right;
+}
+
+.card-small-number {
+  font-weight: bold;
+  font-size: 2.5em;
+  line-height: 0.9;
+}
+
+.card-small-percentage {
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: #1db489;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.card-small-percentage.is-danger {
+  color: #dc414c;
+}
+
+.card-small-percentage span {
+  display: flex;
+  align-items: center;
+}
+
+.card-small-percentage img {
+  margin-right: 5px;
+}
+
+/* Overview End */
+@media screen and (min-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+  }
+
+  .wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .header-total {
+    border: none;
+  }
+
+  .header-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1d2029;
+    color: white;
+  }
+
+  .header {
+    background: #1d2029;
+  }
+
+  .card {
+    background: #252b43;
+  }
+
+  .card-small {
+    background: #252b43;
+  }
+
+  .card-followers__title,
+.card-small-views {
+    color: white;
+  }
+
+  .switch {
+    background-image: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
+  }
+
+  .switch::before {
+    background: #282943;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
